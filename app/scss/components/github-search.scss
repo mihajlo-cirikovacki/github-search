@@ -1,0 +1,277 @@
+// Import all. (also works with nameSpace)
+@use '../util' as *;
+
+
+.section-github-searh {
+  height: 100vh;
+  background-color: var(--background);
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.github-header {
+  width: 50.69%;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  padding-bottom: 3.6rem;
+
+  &__heading {
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 3.851rem;
+    color: var(--color-3);
+  }
+
+  &__btn-box {
+    display: flex;
+    cursor: pointer;
+  }
+
+  &__toggle {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-family: inherit;
+    line-height: 1.925rem;
+    font-weight: 700;
+    color: var(--color-1);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    transition: all 300ms ease;
+
+    &-img {
+      margin-left: 1.6rem;
+      align-self: center;
+      transition: all 300ms ease;
+     
+      &:hover {
+        filter: var(--filter-svg);
+      }
+    }
+
+    &:hover {
+      color: var(--hover);
+    } 
+   
+  }
+}
+
+.github-search {
+  width: 50.69%;
+  border-radius: 1.5rem;
+  background-color: var(--background-2);
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  margin-bottom: 2.4rem;
+  position: relative;
+  
+  &__input {
+    width: 100%;
+    padding: 2.2rem 0 2.2rem 8rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-size: 1.8rem;
+    font-family: inherit;
+    line-height: 2.5rem;
+    background-color: var(--background-2);
+    color: var(--color-3);
+    background-image: url(/assets/icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: 4.38% center;
+
+    &::placeholder {
+      color: var(--color-2);
+    }
+
+    &--no-results {
+      color: red;
+    }
+  }
+
+  &__btn {
+    padding: 1.3rem 2.4rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    background-color: var(--primary);
+    color: var(--white);
+    transition: all 300ms ease-out;
+    position: absolute;
+    top: .95rem;
+    right: .95rem;
+    
+    &:hover {
+      background-color: var(--primery-light);
+    }
+  }
+}
+
+.github {
+  width: 50.69%;
+  background-color: var(--background-2);
+  border-radius: 1.5rem;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  padding: 4.8rem;
+
+  display: grid;
+  grid-template-columns: .5fr 1fr 1fr;
+  column-gap: 3.7rem;
+  row-gap: 3.2rem; // Posledjni row treba da ima 3.7rem. Da uradim sutra!
+
+  &__img {
+    display: inline-block;
+    width: 11.7rem;
+    border-radius: 50%;
+    grid-row: 1 / -1;
+    justify-self: center;
+  }
+}
+
+.github-profile {
+  grid-column: 2 / span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__heading {
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 3.9rem;
+    color: var(--color-3);
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  &__username {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    color: var(--primary);
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+    align-self: end;
+  }
+
+  &__description { 
+    font-size: 1.5rem;
+    grid-column: 1 / 3;
+    align-self: end;
+    color: var(--color-2);
+
+    
+    &--no-bio { // Ako nema profile bio! Ako ima ovo sklanjam / Da hendlujem posle...
+      opacity: 0.7;
+    }
+  }
+
+  &__date {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    color: var(--color-1);
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: start;
+    justify-self: end;
+    padding-top: 1rem;
+  }
+}
+
+.github-info {
+  background-color: var(--background);
+  border-radius: 1rem;
+  grid-column: 2 / span 2;
+
+  padding: 1.5rem 8.3rem 1.7rem 3.2rem ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+
+  &__heading {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    font-weight: 400;
+    color: var(--color-2);
+  }
+}
+
+.github-info__repos,
+.github-info__foll, 
+.github-info__following {
+  &-num {
+    font-size: 2.2rem;
+    line-height: 3.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-3);
+  }
+}
+
+.github-info-2 {
+  line-height: 2.2rem;
+  color: var(--color-3);
+  grid-column: 2 / span 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 6.2rem;
+  row-gap: 1.9rem;
+
+  // &__icon {
+    
+  // }
+
+  &__state,
+  &__link,
+  &__twitter, 
+  &__city {
+    display: flex;
+    gap: 1.6rem;
+
+    &--not-available {
+      opacity: .5;
+    }
+  }
+
+  &__twitter {
+    margin-left: 6rem;
+  }
+
+  &__link {
+    color: currentColor;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 17%;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background-color: currentColor;
+      transition: opacity 300ms ease;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+
+
+

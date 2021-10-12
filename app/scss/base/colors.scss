@@ -1,0 +1,51 @@
+
+:root {
+  // Light mode:
+  --primary: #0079FF;
+  --color-1: #697C9A;
+  --color-2: #4B6A9B;
+  --color-3: #2B3442;
+  --hover: #2B3442;
+  --filter-svg: invert(17%) sepia(8%) saturate(1707%) hue-rotate(178deg) brightness(20%) contrast(92%);
+
+  // Tints:
+  --primery-light: #60ABFF;
+
+  // Backgrounds:
+  --background: #F6F8FF;
+  --background-2: #FEFEFE;
+  --white: #fff;
+}
+
+:root.dark-mode {
+  --primary: #0079FF;
+  --color-1: #fff;
+  --color-2: #fff;
+  --color-3: #fff;
+  --hover: #90A4D4;
+  --filter-svg: invert(17%) sepia(8%) saturate(1707%) hue-rotate(178deg) brightness(100%) contrast(92%);
+  // Backgrounds:
+  --background: #141D2F;
+  --background-2: #1E2A47;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

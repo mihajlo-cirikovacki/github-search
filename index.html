@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <!-- CSS/JS -->
+  <link rel="stylesheet" href="/dist/style.css">
+  <script defer src="/dist/script.js"></script>
+
+  <title>GitHub Search</title>
+</head>
+<body>
+  <section class="section-github-searh">
+    <header class="github-header">
+      <h1 class="github-header__heading">devfinder</h1>
+      <div class="github-header__btn-box">
+        <button class="github-header__toggle">Dark </button>
+        <img src="/assets/icon-moon.svg" alt="Dark mode button" class="github-header__toggle-img"></img>
+      </div>
+    </header>
+    <form class="github-search">
+      <input class="github-search__input" placeholder="Search GitHub username..."></input>
+      <button class="github-search__btn">Search</button>
+    </form>
+    <main class="github">
+      <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Profile image" class="github__img"></img>
+      <div class="github-profile">
+        <div class="github-profile__heading">The Octocat</div>
+        <h3 class="github-profile__username">@octocat</h3>
+        <p class="github-profile__description github-profile__description--no-bio">This profile has no bio</p>
+        <div class="github-profile__date"><span>Joined</span> 25 Jan 2011</div>
+      </div>
+      <div class="github-info">
+        <div class="github-info__repos">
+          <h4 class="github-info__heading">Repos</h4>
+          <div class="github-info__repos-num">8</div>
+        </div>
+        <div class="github-info__foll">
+          <h4 class="github-info__heading">Followers</h4>
+          <div class="github-info__foll-num">3938</div>
+        </div>
+        <div class="github-info__following">
+          <h4 class="github-info__heading">Following</h4>
+          <div class="github-info__following-num">9</div>
+        </div>
+      </div>
+      <div class="github-info-2">
+        <p class="github-info-2__state"><img src="/assets/icon-location.svg" alt="Icon Location" class="github-info-2__icon" > San Francisco</p>
+        <p class="github-info-2__twitter github-info-2__twitter--not-available"><img src="/assets/icon-twitter.svg" alt="Twitter" class="github-info-2__icon">Not Available</p>
+        <a href="https://github.blog" class="github-info-2__link"><img src="/assets/icon-website.svg" alt="Website" class="github-info-2__icon"> https://github.blog</a>
+        <p class="github-info-2__city"><img src="/assets/icon-company.svg" alt="City" class="github-info-2__icon"> @github</p>
+      </div>
+    </main>
+  </section>
+</body>
+</html>
