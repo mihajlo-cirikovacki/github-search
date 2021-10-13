@@ -95,7 +95,7 @@
   
   &__input {
     width: 100%;
-    padding: 2.2rem 0 2.2rem 8rem;
+    padding: 2.2rem 14rem 2.2rem 8rem;
     border: none;
     border-radius: 1.5rem;
     font-size: 1.8rem;
@@ -161,13 +161,12 @@
   display: grid;
   grid-template-columns: min-content 1fr 1fr;
   column-gap: 3.7rem;
-  row-gap: 2rem; // Posledjni row treba da ima 3.7rem. Da uradim sutra!
+  row-gap: 2rem; 
 
   @include respond('desktop') {
     padding: 4rem;
     grid-template-rows: repeat(4, min-content);
-    //column-gap: 4.1rem; // ??? DA proverim
-    row-gap: 3.2rem; // ??? DA proverim
+    row-gap: 3.2rem; 
   }
 
   @include respond('tab-port') {
@@ -217,7 +216,7 @@
       font-size: 1.3rem;
     }
     
-    &--no-bio { // Ako nema profile bio! Ako ima ovo sklanjam / Da hendlujem posle...
+    &--no-bio { 
       opacity: 0.7;
     }
   }
@@ -230,7 +229,6 @@
   grid-template-columns: repeat(2, 1fr);
 
   @include respond('desktop') {
-    //grid-column: 1 / span 3;
     grid-row: 1 / 2;
   }
 
@@ -244,7 +242,6 @@
 
     @include respond('desktop') {
       grid-column: 1 / span 2;
-      //margin-top: 1rem;
     }
 
     @include respond('phone') {
@@ -396,7 +393,12 @@
   &__twitter, 
   &__city {
     display: flex;
-    
+  }
+
+  &__state--data,
+  &__link--data,
+  &__twitter--data, 
+  &__city--data {
     &--not-available {
       opacity: .5;
     }
@@ -435,7 +437,13 @@
 }
 
 
-
+.error-input {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  color: #F74646;
+  text-align: right;
+}
 
 
 
