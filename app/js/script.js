@@ -87,14 +87,12 @@ const getUserData = async (userName) => {
     }
 
     renderInfo(dataForRend);
-    console.log(data.location);
     
   } catch(err) {
     console.error(err.message);
     renderErrInput(input);
   };
 };
-
 
 // === EVENT LISTENERS:
 // FORM:
@@ -126,7 +124,11 @@ btnBox.addEventListener('click', (e) => {
     else toggleBtn.textContent = 'Light';
 });
 
-
+// Reset input on click:
+input.addEventListener('click', (e) => {
+  input.classList.remove('error-input');
+  input.value = '';
+});
 
 
 
