@@ -46,8 +46,8 @@ const renderInfo = function(data) {
   following.textContent = data.following;
   // Separate State and City:
   const location = data.location.split(',');
-  state.textContent = location[1];
-  city.textContent = location[0];
+  state.textContent = location[1] || 'Not Available';
+  city.textContent = location[0] || 'Not Available';
 
   twitter.textContent = data.twitter;
   blog.textContent = data.blog;
@@ -85,7 +85,7 @@ const getUserData = async (userName) => {
       twitter: data.twitter_username || 'Not Available',
       blog: data.blog || 'Not Available',
     }
-
+    console.log(data);
     renderInfo(dataForRend);
     
   } catch(err) {
