@@ -20,6 +20,16 @@
   background-color: transparent;
   padding-bottom: 3.6rem;
 
+  @include respond('tab-port') {
+    width: 100%;
+    max-width: 53.7rem;
+  }
+
+  @include respond('phone') {
+    width: 100%;
+    max-width: 32.7rem;
+  }
+
   &__heading {
     font-size: 2.6rem;
     font-weight: 700;
@@ -47,6 +57,7 @@
     align-items: center;
     transition: all 300ms ease;
 
+    
     &-img {
       margin-left: 1.6rem;
       align-self: center;
@@ -71,10 +82,20 @@
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   margin-bottom: 2.4rem;
   position: relative;
+
+  @include respond('tab-port') {
+    width: 100%;
+    max-width: 53.7rem;
+  }
+
+  @include respond('phone') {
+    width: 100%;
+    max-width: 32.7rem;
+  }
   
   &__input {
     width: 100%;
-    padding: 2.2rem 0 2.2rem 8rem;
+    padding: 2.2rem 14rem 2.2rem 8rem;
     border: none;
     border-radius: 1.5rem;
     font-size: 1.8rem;
@@ -85,6 +106,11 @@
     background-image: url(/assets/icon-search.svg);
     background-repeat: no-repeat;
     background-position: 4.38% center;
+
+    @include respond('phone') {
+      padding: 1.8rem 9.8rem 1.7rem 4.5rem;
+      font-size: 1.3rem;
+    }
 
     &::placeholder {
       color: var(--color-2);
@@ -109,6 +135,15 @@
     position: absolute;
     top: .95rem;
     right: .95rem;
+
+    @include respond('phone') {
+      padding: 1.25rem 1.6rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 2rem;
+      top: .75rem;
+      right:.75rem;
+    }
     
     &:hover {
       background-color: var(--primery-light);
@@ -124,9 +159,27 @@
   padding: 4.8rem;
 
   display: grid;
-  grid-template-columns: .5fr 1fr 1fr;
+  grid-template-columns: min-content 1fr 1fr;
   column-gap: 3.7rem;
-  row-gap: 3.2rem; // Posledjni row treba da ima 3.7rem. Da uradim sutra!
+  row-gap: 2rem; 
+
+  @include respond('desktop') {
+    padding: 4rem;
+    grid-template-rows: repeat(4, min-content);
+    row-gap: 3.2rem; 
+  }
+
+  @include respond('tab-port') {
+    width: 100%;
+    max-width: 53.7rem;
+  }
+
+  @include respond('phone') {
+    width: 100%;
+    max-width: 32.7rem;
+    column-gap: 1.95rem;
+    padding: 3.2rem 2.4rem 4.8rem;
+  }
 
   &__img {
     display: inline-block;
@@ -134,13 +187,50 @@
     border-radius: 50%;
     grid-row: 1 / -1;
     justify-self: center;
+
+    @include respond('desktop') {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+
+    @include respond('phone') {
+      width: 7rem;
+    }
+  }
+
+  &__description { 
+    font-size: 1.5rem;
+    grid-column: 2 / span 2;
+    //grid-row: 1 / span 2;
+    align-self: end;
+    //padding-bottom: 3rem;
+    margin-top: -5rem;
+    color: var(--color-2);
+
+    @include respond('desktop') {
+      grid-column: 1 / span 3;
+      margin-top: -1rem;
+    }
+
+    @include respond('phone') {
+      font-size: 1.3rem;
+    }
+    
+    &--no-bio { 
+      opacity: 0.7;
+    }
   }
 }
 
 .github-profile {
   grid-column: 2 / span 2;
+  grid-row: 1 / 2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @include respond('desktop') {
+    grid-row: 1 / 2;
+  }
 
   &__heading {
     font-size: 2.6rem;
@@ -149,6 +239,16 @@
     color: var(--color-3);
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+
+    @include respond('desktop') {
+      grid-column: 1 / span 2;
+    }
+
+    @include respond('phone') {
+      font-size: 1.6rem;
+      line-height: 2.37rem;
+      margin-bottom: 1rem;
+    }
   }
 
   &__username {
@@ -156,20 +256,18 @@
     line-height: 2.4rem;
     font-weight: 400;
     color: var(--primary);
-    grid-column: 1 / 1;
+    grid-column: 1;
     grid-row: 1 / 2;
-    align-self: end;
-  }
+    align-self: center;
+    margin-top: -1.2rem;
 
-  &__description { 
-    font-size: 1.5rem;
-    grid-column: 1 / 3;
-    align-self: end;
-    color: var(--color-2);
+    @include respond('desktop') {
+       align-self: end;
+    }
 
-    
-    &--no-bio { // Ako nema profile bio! Ako ima ovo sklanjam / Da hendlujem posle...
-      opacity: 0.7;
+    @include respond('phone') {
+      font-size: 1.3rem;
+      line-height: 1.9rem;
     }
   }
 
@@ -182,6 +280,19 @@
     align-self: start;
     justify-self: end;
     padding-top: 1rem;
+
+    @include respond('desktop') {
+      grid-column: 1 / span 2;
+      grid-row: 2 / 3;
+      justify-self: start;
+      align-self: center;
+      padding-top: 0rem;
+    }
+
+    @include respond('phone') {
+      font-size: 1.3rem;
+      line-height: 1.9rem;
+    }
   }
 }
 
@@ -190,17 +301,33 @@
   border-radius: 1rem;
   grid-column: 2 / span 2;
 
-  padding: 1.5rem 8.3rem 1.7rem 3.2rem ;
+  padding: 1.5rem 8.3rem 1.7rem 3.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 6rem;
+  margin-top: 1.2rem; 
+
+  @include respond('desktop') {
+    grid-column: 1 / span 3;
+    grid-row: 3 / 4;
+  }
+
+  @include respond('phone') {
+    padding: 1.8rem 1.4rem 1.9rem 1.5rem;
+    gap: 0;
+  }
 
   &__heading {
     font-size: 1.3rem;
     line-height: 1.9rem;
     font-weight: 400;
     color: var(--color-2);
+
+    @include respond('phone') {
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+    }
   }
 }
 
@@ -213,6 +340,12 @@
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-3);
+
+    @include respond('phone') {
+      font-size: 1.6rem;
+      line-height: 2.3rem;
+    }
+
   }
 }
 
@@ -220,36 +353,72 @@
   line-height: 2.2rem;
   color: var(--color-3);
   grid-column: 2 / span 2;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   align-items: center;
   column-gap: 6.2rem;
   row-gap: 1.9rem;
+  margin-top: 1.7rem;
 
-  // &__icon {
-    
-  // }
+  @include respond('big-desktop') {
+    column-gap: 15rem;
+  }
+
+  @include respond('desktop') {
+    grid-column: 1 / span 3;
+    grid-row: 4 / 5;
+    column-gap: 16rem;
+  }
+
+  @include respond('tab-land') {
+    column-gap: 11rem;
+  }
+
+  @include respond('tab-port') {
+    column-gap: 6rem;
+  }
+
+  @include respond('phone') {
+    grid-template-columns: max-content;
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+  }
+
+  &__icon {
+    margin-right: 1.6rem;
+    filter: var(--filter-svg2);
+  }
 
   &__state,
   &__link,
   &__twitter, 
   &__city {
     display: flex;
-    gap: 1.6rem;
+  }
 
+  &__state--data,
+  &__link--data,
+  &__twitter--data, 
+  &__city--data {
     &--not-available {
       opacity: .5;
     }
   }
 
   &__twitter {
-    margin-left: 6rem;
+    @include respond('phone') {
+    grid-row: 3 / 4;
+    }
   }
 
   &__link {
     color: currentColor;
     position: relative;
-    
+
+    @include respond('phone') {
+      grid-row: 2 / 3;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -269,7 +438,13 @@
 }
 
 
-
+.error-input {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  color: #F74646;
+  text-align: right;
+}
 
 
 
