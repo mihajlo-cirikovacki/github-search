@@ -16,7 +16,6 @@
   const twitter = document.querySelector('.github-info-2__twitter--data');
   const blog = document.querySelector('.github-info-2__link--data');
   const city = document.querySelector('.github-info-2__city--data');
-
   const input = document.querySelector('.github-search__input');
 
   // Date:
@@ -125,7 +124,7 @@
       else toggleBtn.textContent = 'Light';
   });
 
-  // Reset input on click:
+  //  Reset input on click:
   input.addEventListener('click', (e) => {
     input.classList.remove('error-input');
     input.value = '';
